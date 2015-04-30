@@ -1,0 +1,23 @@
+.bg {
+position:fixed;
+left:0;
+top:0;
+right:0;
+bottom:0;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover !important;
+}
+
+.coverthumb {
+	margin: 0 10px 0 0;
+	padding:5px;
+}
+
+.selected {
+	background: rgba(75,221,129,1);
+	-webkit-box-shadow: 1px -1px 3px 0 rgba(0,0,0,0.2) inset;
+box-shadow: 1px -1px 3px 0 rgba(0,0,0,0.2) inset;
+}
