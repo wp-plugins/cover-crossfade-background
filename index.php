@@ -9,7 +9,7 @@
 // CREATE SQL TABLE
 if (is_admin()) {
 
-	wp_enqueue_style('stylecss', plugins_url('style.css', __FILE__));
+	
 	include 'postmeta.php';
 
 	$sql = "CREATE TABLE IF NOT EXISTS wp_coverbg (
@@ -27,8 +27,8 @@ if (is_admin()) {
 add_action('wp_head', 'initbg');
 
 function initbg() {
+	
 
-	wp_enqueue_script('crossfade', plugins_url('crossFade.js', __FILE__));
 
 	$value = get_post_meta(get_the_ID(), 'coverbg', true);
 	
@@ -65,6 +65,8 @@ add_action('wp_enqueue_scripts', 'loadscripts');
 function loadscripts() {
 	$plugins_url = plugins_url();
 	wp_enqueue_style('stylecss', plugins_url('style.css', __FILE__));
+	wp_enqueue_script('crossfade', plugins_url('crossFade.js', __FILE__));
+	
 }
 
 // load admin scripts
@@ -72,6 +74,7 @@ add_action('admin_enqueue_scripts', 'addj');
 function addj() {
 	$screen = get_current_screen();
 	if($screen->post_type == 'page' || $screen->post_type == 'post') {
+		wp_enqueue_style('stylecss', plugins_url('style.css', __FILE__));
 	wp_enqueue_script('custom-js', plugins_url('coverbg/script.js', dirname(__FILE__)));
 	}
 }

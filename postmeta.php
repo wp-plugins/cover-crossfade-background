@@ -57,7 +57,7 @@ function coverbg_meta_box_callback( $post ) {
 			//get file type.
 			$file_size = filesize($filepath);
 			//get file size.
-			echo "<img class=" . coverthumb . " src='../wp-content/gallery/cover/thumbs/$file_name' name=" . $name . ">";
+			echo "<img class=\"coverthumb\" src='../wp-content/gallery/cover/thumbs/$file_name' name=" . $name . ">";
 		}//end if is file etc.
 	}//end while going over files in uploads dir.
 }
